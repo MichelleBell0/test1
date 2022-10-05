@@ -24,13 +24,13 @@ function onHttpStart(){
 app.get("/", (req, res) => {
     var resText = "<h2> Declaration: </h2> <br>";
     resText += "<p> I declare that this test is my own work in accordance with Seneca Academic Policy. No part of this test has been copied manually or electronically from any other source. </p>";
-    resText += "Name: <mark>Michelle Bell</mark> <br> Student Number: <mark>137551214</mark> <br>";
-    resText += "<a href = './test1'> Go to Test 1 </a> <br> <br>";
+    resText += "Name: <mark>Michelle Bell</mark> <br> Student Number: <mark>137551214</mark> <br> <br>";
+    resText += "<a href = './test1'> Go to Test 1 </a> <br>";
     res.send(resText);
 });
 
 app.get("/test1", (req, res) => {
-    res.send("Hello World!");
+    res.sendFile(path.join(__dirname, "/views/test1.html"));
 });
 
 // setup http server to listen on HTTP_PORT
