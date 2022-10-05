@@ -21,7 +21,8 @@ function onHttpStart(){
 
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    var resText = "<h2> Declaration: </h2> <br>";
+    res.send(resText);
 });
 
 app.get("/test1", (req, res) => {
